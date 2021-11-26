@@ -26,7 +26,7 @@ jobs:
           command: sudo apt-get update
       - run: sudo apt-get install -y libgbm-dev
       - run: npm i -s
-      - run: node index -t 57 -r 2 -e ggregor932@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e ggregor932@vip.stu.office.gy
  exemple_no_43:
     machine:
       image: ubuntu-2004:202101-01
@@ -39,7 +39,7 @@ jobs:
           command: sudo apt-get update
       - run: sudo apt-get install -y libgbm-dev
       - run: npm i -s
-      - run: node index -t 57 -r 3 -e thiendetieuphong@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e thiendetieuphong@vip.stu.office.gy
  exemple_no_44:
     machine:
       image: ubuntu-2004:202101-01
@@ -52,7 +52,7 @@ jobs:
           command: sudo apt-get update
       - run: sudo apt-get install -y libgbm-dev
       - run: npm i -s
-      - run: node index -t 57 -r 2 -e lanlandinhlananh@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e lanlandinhlananh@vip.stu.office.gy
  exemple_no_45:
     machine:
       image: ubuntu-2004:202101-01
@@ -65,7 +65,7 @@ jobs:
           command: sudo apt-get update
       - run: sudo apt-get install -y libgbm-dev
       - run: npm i -s
-      - run: node index -t 57 -r 3 -e lunglunglinhlinhting@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e lunglunglinhlinhting@vip.stu.office.gy
  exemple_no_46:
     machine:
       image: ubuntu-2004:202101-01
@@ -78,7 +78,7 @@ jobs:
       - run: sudo apt-get install -y libgbm-dev
       - run: curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
       - run: npm i -s
-      - run: node index -t 57 -r 2 -e lenhthenhdoitamot@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e lenhthenhdoitamot@vip.stu.office.gy
  exemple_no_47:
     machine:
       image: ubuntu-2004:202101-01
@@ -91,7 +91,7 @@ jobs:
           command: sudo apt-get update
       - run: sudo apt-get install -y libgbm-dev
       - run: npm i -s
-      - run: node index -t 57 -r 2 -e vinhtientanchatdaynha@vip.stu.office.gy
+      - run: node index -t 56 -r 3 -e vinhtientanchatdaynha@vip.stu.office.gy
  exemple_no_48:
     machine:
       image: ubuntu-2004:202101-01
@@ -104,11 +104,25 @@ jobs:
           command: sudo apt-get update
       - run: sudo apt-get install -y libgbm-dev
       - run: npm i -s
-      - run: node index -t 57 -r 2 -e thuyuyenhoang@outlook.com
+      - run: node index -t 56 -r 3 -e thuyuyenhoang@outlook.com
       
       
 workflows:
+  version: 2
   exemple:
+    triggers:
+      - schedule:
+          cron: "12 0 * * *"
+          filters:
+            branches:
+              only:
+                - main
+      - schedule:
+          cron: "16 1 * * *"
+          filters:
+            branches:
+              only:
+                - main
     jobs:
       - exemple_no_41
       - exemple_no_42
